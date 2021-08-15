@@ -1,0 +1,23 @@
+#python program to check whether given number is armstrong or not
+def getDigits(n):
+    digitCount=0
+    while(n>0):
+        remainder=n%10
+        digitCount+=1
+        n=n//10
+    return digitCount
+def armstrong(n):
+    digits=getDigits(n)
+    sum=0
+    while(n>0):
+        remainder=n%10
+        sum=sum+(remainder**digits)
+        n=n//10
+    return sum
+
+n = int(input("Enter a Number\n"))
+if n==armstrong(n):
+    print(n,"is an armstrong number")
+else:
+    print(n,"is not an armstrong number")
+        
